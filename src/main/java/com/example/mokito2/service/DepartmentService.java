@@ -13,8 +13,7 @@ public interface DepartmentService {
 
     Optional<Employee> findDepartmentMinSalaryEmployee(Integer department, Integer id);
 
-
-    //  Optional<Employee> findAllSumSalaryDepartment(Integer department, Integer salary);
+    Integer findAllSumSalaryDepartment(Integer department);
 
     Optional<List<Employee>> findDepartmentsAllEmployee(Integer id, Integer department);
 

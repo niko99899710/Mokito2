@@ -30,13 +30,14 @@ public class DepartmentServiceImpl implements DepartmentService {
                 .orElseThrow(() -> new IllegalArgumentException("don't have employee")));
     }
 
-    //   @Override
-    // public  Optional<Employee> findAllSumSalaryDepartment (Integer department, Integer salary) {
-    //     return Optional.of((Employee) departmentService.getAll()
-    //     .stream()
-    //       .filter(employee -> Objects.equals(employee.getSalary(), salary))
-    //        .collect(Collectors.toList()));
-    //  }
+    @Override
+     public Integer findAllSumSalaryDepartment(Integer department) {
+       return departmentService.getAll()
+              .stream()
+              .filter(employee -> Objects.equals(employee.getDepartment(), department))
+               .mapToInt(Employee::getSalary)
+               .sum();
+    }
 
     @Override
     public Optional<List<Employee>> findDepartmentsAllEmployee(Integer id, Integer department) {

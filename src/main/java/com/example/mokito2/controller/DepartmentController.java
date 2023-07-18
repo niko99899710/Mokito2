@@ -32,11 +32,10 @@ public class DepartmentController {
         return departmentService.findDepartmentMinSalaryEmployee(department, id);
     }
 
-    //  @GetMapping("{id}/salary/sum")
-    //  public double findAllSumSalaryDepartment (@PathVariable Integer department,
-    //                                          @PathVariable Integer salary) {
-    //return departmentServicee.findAllSumSalaryDepartment(department,salary);
-    // }
+      @GetMapping("{id}/salary/sum")
+     public Integer findAllSumSalaryDepartment (@PathVariable Integer department) {
+         return departmentService.findAllSumSalaryDepartment(department);
+     }
 
     @GetMapping(value = "/{id}", params = "/employees")
     public Optional<List<Employee>> findDepartmentsAllEmployee (@PathVariable Integer id ,
